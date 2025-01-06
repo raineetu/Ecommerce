@@ -1,20 +1,27 @@
 import { FaSearch, FaCartArrowDown } from "react-icons/fa";
 import DarkMode from "./DarkMode";
 
+const Menu = [
+  { id: 1, list: "Home", link: "/" },
+  { id: 2, list: "Shop", link: "/shop" },
+  { id: 3, list: "About", link: "/about" },
+  { id: 4, list: "Contact", link: "/contact" },
+];
+
 function Navbar() {
   return (
     <>
       <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40 font-serif">
-        {/* upper navbar */}
+        {/* Upper navbar */}
         <div className="bg-primary/40">
           <div className="container flex justify-between items-center py-4">
             <div>
               <a href="#" className="font-bold text-xl sm:text-2xl flex gap-2">
-                <img src="rn.jpg" alt="logo" className="w-12 " />
+                <img src="rn.jpg" alt="logo" className="w-12" />
                 Shopifity
               </a>
             </div>
-            {/* search bar and order button */}
+            {/* Search bar and order button */}
             <div className="group flex relative">
               <input
                 type="text"
@@ -27,7 +34,7 @@ function Navbar() {
               />
               <FaSearch className="text-gray-500 group-hover:text-primary absolute top-1/2 -translate-y-1/2 right-[2vh]" />
             </div>
-            {/* order botton */}
+            {/* Order button */}
             <button
               onClick={() => alert("Ordering not available yet...")}
               className="w-[7vh] hover:w-[15vh] sm:w-[10vh] sm:hover:w-[20vh] bg-gradient-to-r from-primary to-secondary transition-all duration-300 p-2 rounded-full flex items-center justify-center text-white group overflow-hidden"
@@ -38,14 +45,28 @@ function Navbar() {
               </span>
             </button>
 
-            {/* dark and light theme */}
+            {/* Dark and light theme toggle */}
             <div>
               <DarkMode />
             </div>
           </div>
         </div>
-        {/* lower navbar */}
-        <div></div>
+
+        {/* Lower navbar */}
+        <div>
+          <ul className="flex justify-center space-x-20 py-2">
+            {Menu.map((data) => (
+              <li key={data.id}>
+                <a
+                  href={data.link}
+                  className="text-lg hover:text-primary transition-all duration-200"
+                >
+                  {data.list}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </>
   );
