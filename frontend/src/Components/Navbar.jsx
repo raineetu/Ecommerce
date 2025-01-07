@@ -11,7 +11,7 @@ const Menu = [
 function Navbar() {
   return (
     <>
-      <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40 font-serif">
+      <div className="shadow-md bg-white dark:bg-gray-950 dark:text-white duration-200 relative z-40 font-serif">
         {/* Upper navbar */}
         <div className="bg-primary/40">
           <div className="container flex justify-between items-center py-4">

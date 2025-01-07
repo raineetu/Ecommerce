@@ -4,6 +4,9 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      screens: {
+        xs: "320px",
+      },
       colors: {
         primary: "#fea928",
         secondary: "#ed8900",
@@ -17,5 +20,6 @@ export default {
       },
     },
   },
+  important: true,
   plugins: [],
 };
