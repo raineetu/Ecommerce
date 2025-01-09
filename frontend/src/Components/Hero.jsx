@@ -31,7 +31,7 @@ const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 3000,
+  autoplaySpeed: 2000,
 };
 
 function Hero() {
@@ -75,29 +75,6 @@ function Hero() {
               </div>
             ))}
           </Slider>
-        </div>
-      </div>
-
-      {/* Loop through items to display additional content */}
-      <div className="container mt-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {items.map((item) => (
-            <div key={item.id} className="flex flex-col items-center">
-              {/* Image */}
-              <div className="w-full max-w-[250px] md:max-w-[300px] mb-4">
-                <img
-                  src={item.img}
-                  className="w-full h-auto object-contain"
-                  alt={item.title}
-                />
-              </div>
-              {/* Title and Description */}
-              <h3 className="text-xl font-semibold text-center">
-                {item.title}
-              </h3>
-              <p className="text-sm text-center mt-2">{item.description}</p>
-            </div>
-          ))}
         </div>
       </div>
     </>
