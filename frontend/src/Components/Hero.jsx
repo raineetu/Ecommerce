@@ -26,7 +26,6 @@ const items = [
   },
 ];
 const settings = {
-  dots: true,
   infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1,
@@ -37,12 +36,11 @@ const settings = {
 function Hero() {
   return (
     <>
-      <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-gray-100 flex justify-center items-center dark:bg-gray-950 dark:text-white duration-200">
+      <div className="relative overflow-hidden min-h-[550px] sm:min-h-[640px] bg-gray-100 flex justify-center items-center dark:bg-gray-950 dark:text-white duration-200">
         {/* Background pattern */}
         <div className="h-[450px] w-[450px] sm:h-[700px] sm:w-[700px] bg-primary/40 absolute -top-2/4 right-90 rounded-3xl rotate-45 z-[0]"></div>
 
         {/* Hero section */}
-
         <div className="container xs:mt-[6vh] relative z-[10px]">
           <Slider {...settings}>
             {items.map((item) => (
@@ -52,7 +50,12 @@ function Hero() {
               >
                 {/* Text Content */}
                 <div className="w-full max-w-[650px] mx-auto text-center sm:text-left">
-                  <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl py-2 text-gray-900 dark:text-white z-[8]">
+                  <h1
+                    data-aos="zoom-out"
+                    data-aos-duration="500"
+                    data-aos-once="true"
+                    className="font-bold text-3xl sm:text-4xl md:text-5xl py-2 text-gray-900 dark:text-white z-[8]"
+                  >
                     {item.title}
                   </h1>
 
@@ -67,9 +70,9 @@ function Hero() {
                 {/* Image */}
                 <div className="w-full max-w-[350px] sm:max-w-[250px] md:max-w-[300px] mt-6 sm:mt-0">
                   <img
-                    src={item.img} // Using item.img to dynamically set the image for each slide
+                    src={item.img}
                     className="w-full h-auto object-contain"
-                    alt={item.title} // Using item.title for alt text
+                    alt={item.title}
                   />
                 </div>
               </div>

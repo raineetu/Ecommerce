@@ -46,10 +46,25 @@ function Product() {
   return (
     <>
       {/* Loop through items to display additional content */}
-      <div className="container mt-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="container mt-12 ">
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="text-black   font-bold text-4xl">
+            Top Selling Products
+          </h1>
+          <h2 className="text-primary/40">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+            aliquam hic{" "}
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-6">
           {items.map((item) => (
-            <div key={item.id} className="flex flex-col items-center">
+            <div
+              data-aos="fade-right"
+              data-aos-delays={item.aosDelay}
+              key={item.id}
+              className="flex flex-col items-center"
+            >
               {/* Image */}
               <div className="w-full max-w-[250px] md:max-w-[300px] mb-4 h-[300px] flex justify-center items-center bg-gray-100">
                 <img
