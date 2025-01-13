@@ -5,6 +5,7 @@ import Product from "./Components/Product";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Topproduct from "./Components/Topproduct";
+import Banner from "./Components/Banner";
 
 function App() {
   useEffect(() => {
@@ -22,6 +23,7 @@ function App() {
       <Hero />
       <Product />
       <Topproduct />
+      <Banner />
     </>
   );
 }

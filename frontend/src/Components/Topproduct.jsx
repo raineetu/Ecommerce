@@ -66,32 +66,36 @@ function Topproduct() {
           {productDta.map((data) => (
             <div
               key={data.id}
-              className="group border rounded-lg shadow-md p-2 dark:bg-gray-950 hover:bg-black/80 hover:text-white mt-16 md:mt-20"
+              className="group border rounded-lg shadow-md p-4 dark:bg-gray-950 hover:bg-black/80 hover:text-white mt-24 md:mt-28"
             >
               {/* Image Section */}
-              <div className="mb-2 flex items-center justify-center">
+              <div className="flex items-center justify-center h-[80px] md:h-[120px]">
                 <img
                   src={data.img}
                   alt={data.title}
-                  className="max-w-[120px] md:max-w-[180px] mx-auto transform -translate-y-16 group-hover:scale-105 duration-300 drop-shadow-md"
+                  className="max-w-[120px] md:max-w-[180px] transform -translate-y-16 group-hover:scale-105 duration-300 drop-shadow-md"
                 />
               </div>
 
+              {/* Star Rating */}
+              <div className="flex justify-center items-center mt-4">
+                <StarRating rating={data.rating} />
+              </div>
+
               {/* Product Details */}
-              <h3 className="text-md font-bold text-black dark:text-white group-hover:text-white">
+              <h3 className="text-md font-bold text-black dark:text-white group-hover:text-white text-center mt-4">
                 {data.title}
               </h3>
-              <p className="text-xs text-gray-600 dark:text-gray-400 mt-1 group-hover:text-gray-200 duration-300">
+              <p className="text-xs text-gray-600 dark:text-gray-400 mt-2 group-hover:text-gray-200 duration-300 text-center">
                 {data.description}
               </p>
-              <p className="text-primary font-bold mt-2 group-hover:text-white">
+              <p className="text-primary font-bold mt-3 text-center group-hover:text-white">
                 {data.price}
               </p>
 
-              {/* Star Rating */}
-              <StarRating rating={data.rating} />
-              <div className="flex items-center justify-center">
-                <button className="bg-yellow-400 text-white rounded-full p-2 ">
+              {/* Order Now Button */}
+              <div className="flex items-center justify-center mt-4">
+                <button className="bg-yellow-400 text-white rounded-full px-4 py-2">
                   Order Now
                 </button>
               </div>
